@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Tamanna Bhrigunath{% endblock %}
+
+{% block content %}
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <p>
+                I am Tamanna Bhrigunath, a Computer Science undergraduate with a strong focus on Data Science, Machine Learning, and Python-based development. I have hands-on experience building end-to-end machine learning projects, including credit scoring and house price prediction systems, where I worked on data preprocessing, model training, evaluation, and deployment using Flask and Streamlit.
+                <br><br>
+                Alongside ML, I have a solid foundation in Data Structures & Algorithms, databases, and backend development. I am continuously strengthening my problem-solving skills and practical understanding of real-world data-driven systems, with the goal of contributing to impactful, scalable technology solutions.
+            </p>
+        </div>
+        <div class="about-photo-container">
+            <img src="{{ url_for('static', filename='img_.jpg') }}" alt="Profile Photo" class="profile-photo">
+        </div>
+    </div>
+</section>
+
+<section id="projects-preview">
+    <h2>Recent Work</h2>
+    <div class="horizontal-scroll-wrapper">
+        <div class="projects-container-horizontal">
+            {% include '_project_list.html' %}
+        </div>
+    </div>
+    
+    <div class="cta-container">
+        <a href="{{ url_for('projects') }}" class="btn-resume">View All Projects</a>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul class="tag-list">
+        <li>Python</li>
+        <li>Data Science</li>
+        <li>Machine Learning</li>
+        <li>Flask</li>
+        <li>OpenCV</li>
+        <li>Streamlit</li>
+        <li>SQL & Databases</li>
+        <li>NumPy & Pandas</li>
+        <li>Scikit-learn</li>
+        <li>Data Structures & Algorithms</li>
+        <li>Git & GitHub</li>
+        <li>Basic AWS</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:bhrigunathtamanna@gmail.com" target="_blank">Email</a> |
+      <a href="https://www.linkedin.com/in/tamanna-bhrigunath-578b43190" target="_blank">LinkedIn</a> |
+      <a href="https://leetcode.com/u/XuMspNFAS8/" target="_blank">LeetCode</a> |
+      <a href="https://github.com/bhrigu136" target="_blank">GitHub</a>
+    </p>
+</section>
+{% endblock %}

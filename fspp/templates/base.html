@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tamanna Bhrigunath - Portfolio{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Sidebar Navigation (Used for both Desktop and Mobile) -->
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h3>Tamanna Bhrigunath</h3>
+                <p>
+                    Data Science & Machine Learning<br/>
+                    Python Developer
+                </p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('experience') }}">Experience</a></li>
+                
+            </ul>
+            <a href="{{ url_for('static', filename='Tamanna_Bhrigunath_Resume.pdf') }}" class="btn-resume" download>
+                Download Resume
+            </a>
+        </nav>
+        
+        <!-- Mobile Header inside main content -->
+        <div class="main-header-mobile">
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <a href="{{ url_for('home') }}" class="mobile-logo">Home</a>
+        </div>
+
+        <main class="main-content">
+            <div class="content-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+            <footer>
+                <p>&copy; 2025 Tamanna Bhrigunath. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Hamburger menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebarNav = document.querySelector('.sidebar-nav');
+        const mobileLogo = document.querySelector('.mobile-logo');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-open');
+            sidebarNav.classList.toggle('is-open');
+            mobileLogo.classList.toggle('is-open');
+            document.body.classList.toggle('nav-is-open');
+        });
+
+        // Close sidebar when a navigation link is clicked in mobile view
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav ul a, .sidebar-nav .btn-resume');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (sidebarNav.classList.contains('is-open')) {
+                    menuToggle.click();
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+
+                if (sidebarNav.classList.contains('is-open')) {
+                    menuToggle.click();
+                }
+
+                setTimeout(() => {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 400);
+            });
+        });
+    </script>
+</body>
+</html>

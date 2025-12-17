@@ -1,43 +1,41 @@
-# Portfolio Website — Tamanna Bhrigunath
+# 🚀 Portfolio Website — Tamanna Bhrigunath
 
-🌐 **Live Portfolio:** https://portfolio-website-sroy.onrender.com  
-💻 **GitHub:** https://github.com/bhrigu136  
+Live Portfolio: 👉 **[https://portfolio-website-sroy.onrender.com](https://portfolio-website-sroy.onrender.com)**
+GitHub: 👉 **[https://github.com/bhrigu136](https://github.com/bhrigu136)**
 
 ---
 
 ## 📌 Overview
 
-This repository contains my **personal portfolio website** built using **Flask**.  
-It showcases my projects, experience, and skills in **Data Science, Machine Learning, and Python development**.
+This is my **personal portfolio website** built using **Flask**, showcasing my projects, experience, and skills in **Data Science, Machine Learning, and Python development**.
 
-The website is fully deployed on the cloud and intended for recruiters and reviewers to quickly evaluate my work.
+The website is fully deployed on the cloud and designed to provide recruiters and reviewers a clear view of my work, technical abilities, and practical experience.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Flask (Python)
-- **Frontend:** HTML, CSS (Jinja2 Templates)
-- **Deployment:** Render
-- **Production Server:** Gunicorn
-- **Version Control:** Git & GitHub
+* **Backend:** Flask (Python)
+* **Frontend:** HTML, CSS (Jinja2 templating)
+* **Deployment:** Render
+* **Version Control:** Git & GitHub
+* **Server:** Gunicorn (production WSGI server)
 
 ---
 
 ## ✨ Features
 
-- Clean and responsive user interface
-- Projects section with GitHub and Live Demo links
-- Experience section highlighting internships and applied projects
-- Downloadable resume
-- Cloud-deployed and publicly accessible
+* Clean and responsive UI
+* Projects section with GitHub and Live Demo links
+* Experience timeline highlighting internships and projects
+* Downloadable resume
+* Cloud-deployed and publicly accessible
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 portfolio-website/
 │
 ├── fspp/
@@ -52,31 +50,31 @@ portfolio-website/
 │   │   ├── experience.html
 │   │   └── _project_list.html
 │   ├── routes.py
-│   └── **init**.py
+│   └── __init__.py
 │
 ├── fspp_run.py
 ├── requirements.txt
 ├── nginx/
 │   └── nginx.conf
 └── README.md
-
-````
+```
 
 ---
 
-## 🧪 Run Locally
+## 🧪 How to Run Locally
 
 ### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/bhrigu136/portfolio-website.git
 cd portfolio-website
-````
+```
 
-### 2️⃣ (Optional) Create a virtual environment
+### 2️⃣ Create virtual environment (optional but recommended)
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 ### 3️⃣ Install dependencies
@@ -91,7 +89,7 @@ pip install -r requirements.txt
 python fspp_run.py
 ```
 
-Open in browser:
+Open browser and visit:
 
 ```
 http://127.0.0.1:5000
@@ -101,13 +99,19 @@ http://127.0.0.1:5000
 
 ## 🌐 Deployment
 
-The application is deployed on **Render** using **Gunicorn**.
-
-Start command used:
+The application is deployed on **Render** using **Gunicorn** with the following start command:
 
 ```bash
 gunicorn fspp:app --bind 0.0.0.0:$PORT
 ```
+
+Render automatically handles environment variables and port allocation.
+
+---
+
+## 📄 Resume
+
+The resume is available for download directly from the portfolio website.
 
 ---
 
@@ -116,11 +120,11 @@ gunicorn fspp:app --bind 0.0.0.0:$PORT
 I am a **Computer Science undergraduate (B.Tech, 2026)** with hands-on experience in:
 
 * Machine Learning projects
-* Data preprocessing and model evaluation
+* Data preprocessing & model evaluation
 * Flask-based backend development
 * Cloud deployment
 
-I am actively seeking **internship and entry-level roles** in:
+I am actively seeking **internship and entry-level opportunities** in:
 
 * Data Science
 * Machine Learning
@@ -136,5 +140,6 @@ I am actively seeking **internship and entry-level roles** in:
 
 ---
 
-⭐ If you find this project useful, feel free to star the repository.
+## ⭐ Acknowledgement
 
+This project reflects my practical learning journey in building, deploying, and maintaining a real-world web application.
